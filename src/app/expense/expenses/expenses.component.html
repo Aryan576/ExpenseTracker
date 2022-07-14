@@ -113,7 +113,7 @@
                 <br>
                 <button type="button" class="btn btn-primary" id="btnExport"><i class="bi bi-file-earmark-pdf"></i> PDF</button>
                 <br><br>
-                <table datatable  class="row-border hover" id="tblCustomers">
+                <table  *ngIf="expense"   datatable  class="row-border hover" id="tblCustomers">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -126,78 +126,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>xyz</td>
-                            <td>25000</td>
-                            <td>25-07-2022</td>
-                            <td>Food</td>
-                            <td><span class="badge bg-success">Cash</span></td>
+                        <tr *ngFor="let e of expense">
+                            <td>{{e.expesneid}}</td>
+                            <td>{{e.expensename}}</td>
+                            <td>{{e.amount}}</td>
+                            <td>{{e.expensedate}}</td>
+                            <td>{{e.category}}</td>
+                            
+                            <td><span class="badge bg-success">{{e.paymenttype}}</span></td>
                             <td>
                                 <a href="" data-bs-toggle="modal" data-bs-target="#basicModal">Edit</a> | <a href=""
                                     data-bs-toggle="modal" data-bs-target="#verticalycentered">Delete</a>
                             </td>
                         </tr>
 
-                        <tr>
-                            <td>2</td>
-                            <td>Abc</td>
-                            <td>25000</td>
-                            <td>25-07-2022</td>
-                            <td>Food</td>
-                            <td><span class="badge bg-primary">Credit</span></td>
-                            <td>
-                                <a href="">Edit</a> | <a href="">Delete</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Abc</td>
-                            <td>25000</td>
-                            <td>25-07-2022</td>
-                            <td>Food</td>
-                            <td><span class="badge bg-warning">Debit</span></td>
-                            <td>
-                                <a href="">Edit</a> | <a href="">Delete</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>4</td>
-                            <td>Abc</td>
-                            <td>25000</td>
-                            <td>25-07-2022</td>
-                            <td>Food</td>
-                            <td><span class="badge bg-danger">OnlinePayment</span></td>
-                            <td>
-                                <a href="">Edit</a> | <a href="">Delete</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>5</td>
-                            <td>Abc</td>
-                            <td>25000</td>
-                            <td>25-07-2022</td>
-                            <td>Food</td>
-                            <td><span class="badge bg-info">BankAcc.</span></td>
-                            <td>
-                                <a href="">Edit</a> | <a href="">Delete</a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>6</td>
-                            <td>Abc</td>
-                            <td>25000</td>
-                            <td>25-07-2022</td>
-                            <td>Food</td>
-                            <td><span class="badge bg-secondary">Asset</span></td>
-                            <td>
-                                <a href="">Edit</a> | <a href="">Delete</a>
-                            </td>
-                        </tr>
+                        
 
                     </tbody>
                 </table>

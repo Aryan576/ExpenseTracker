@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { CategoryService } from 'src/app/service/category.service';
+import { ExpenseService } from 'src/app/service/expense.service';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-expenses',
@@ -6,11 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expenses.component.scss']
 })
 export class ExpensesComponent implements OnInit {
-
-  constructor() { }
+  expense:{}
+  constructor(private category:CategoryService,private toastr: ToastrService,public service:LoginService,private expenseservice:ExpenseService) { }
 
   ngOnInit(): void {
     this.futureDateDisabled()
+
+    this.expenseservice.listexpsense(this.service.users.userid).then(res=>{
+        this.expense=res.data
+       
+        
+    })
   }
 
   maxDate:any;

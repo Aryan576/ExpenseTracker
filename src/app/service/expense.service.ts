@@ -12,4 +12,9 @@ export class ExpenseService {
   addexpense(model:any):Observable<any>{
     return this.http.post(`${environment.Base_URL}addExpense`,model);
   }
+  listexpsense(userid:any):Promise <any> {
+
+    return this.http.get(`${environment.Base_URL}listexpense/${userid}`).toPromise();
+
+  }
 }
