@@ -1,0 +1,95 @@
+<app-header></app-header>
+<div class="container" style="padding-top: 70px;">
+
+    <div class="pagetitle">
+        <h1>Accounts</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+                <li class="breadcrumb-item active">Accounts</li>
+
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <div class="row">
+        <div class="col-lg-3">
+            <select class="form-select" aria-label="Default select example">
+                <option selected="">Select Account</option>
+                <option value="credit">Credit</option>
+                <option value="debit">Debit</option>
+                <option value="cash">Cash</option>
+                <option value="onlinepayment">OnlinePayment</option>
+                <option value="asset">Asset</option>
+                <option value="bankacc">Bank Acc.</option>
+            </select>
+        </div>
+
+        <div class="col-lg-3">
+            <select class="form-select" aria-label="Default select example">
+                <option selected="">Select Month</option>
+                <option value="Jan">January</option>
+                <option value="Feb">Febuary</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="Aug">August</option>
+                <option value="Sep">September</option>
+                <option value="Oct">October</option>
+                <option value="Nov">November</option>
+                <option value="Dec">December</option>
+            </select>
+        </div>
+
+        <div class="col-lg-3">
+            <select class="form-select" id="ddlYears" aria-label="Default select example">
+                <option selected="">Select Year</option>
+                <option *ngFor="let year of years" value="year">{{ year }}</option>
+            </select>
+        </div>
+
+        <div class="col-lg-3" style="float: right;">
+            <div class="input-group">
+                <span class="input-group-text" id="inputGroupPrepend2"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Search Expense Name"
+                    aria-describedby="inputGroupPrepend2" required="">
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row g-0">
+                            <div class="col-lg-12">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title">Expense Name</h5>
+                                        </div>
+                                        <div class="col">
+                                            <h5 class="card-title" style="float: right;"><i class="fa fa-inr"></i> 40000</h5>
+                                        </div>
+                                    </div>
+                                    <p class="card-text">Category : <a href="">Food</a> | Payment : <a href="">Cash</a> | Date : <a href="">15 July 2022</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+</div><!-- End #main -->

@@ -1,0 +1,158 @@
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a routerLink="/dashboard" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">ExpenseTracker</span>
+      </a>
+      <!-- <i class="bi bi-list toggle-sidebar-btn"></i> -->
+    </div><!-- End Logo -->
+
+    
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" routerLink="/dashboard" data-bs-toggle="dropdown">
+           
+              <i class="bi bi-house-door" style="font-size: 25px;"></i>
+            <span class="d-none d-md-block ps-2">Dashboard</span>
+          </a><!-- End Profile Iamge Icon -->
+
+         
+        </li><!-- End Expense Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" routerLink="/accounts" data-bs-toggle="dropdown">
+           
+              <i class="bi bi-credit-card" style="font-size: 25px;"></i>
+            <span class="d-none d-md-block ps-2">Accounts</span>
+          </a><!-- End Profile Iamge Icon -->
+
+         
+        </li><!-- End Expense Nav -->
+        
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+           
+              <i class="bi bi-bar-chart" style="font-size: 25px;"></i>
+            <span class="d-none d-md-block dropdown-toggle ps-2">Expense</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" routerLink="/addexpense">
+                <i class="bi bi-clipboard-plus"></i>
+                  <span>Add Expense</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" routerLink="/expenses">
+                <i class="bi bi-file-earmark-bar-graph"></i>
+                  <span>Expenses</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+          
+            <li>
+              <a class="dropdown-item d-flex align-items-center" routerLink="/categoryexpense">
+                <i class="bi bi-grid"></i>
+                  <span>Category</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" routerLink="/dailyexpense">
+                <i class="bi bi-calendar-check"></i>
+                  <span>Daily</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" routerLink="/monthlyexpense">
+                <i class="bi bi-calendar-month"></i>
+                  <span>Monthly</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" routerLink="/weeklyexpense">
+                <i class="bi bi-calendar-week"></i>
+                  <span>Weekly</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" routerLink="/yearlyexpense">
+                <i class="bi bi-calendar3"></i>
+                  <span>Yearly</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+          </ul><!-- End Expense Dropdown Items -->
+        </li><!-- End Expense Nav -->
+      
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+           
+              <i class="bi bi-person" style="font-size: 25px;"></i>
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{ service.users.name}}</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" routerLink="/profile">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+          
+            <li>
+              <a class="dropdown-item d-flex align-items-center" routerLink="">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->

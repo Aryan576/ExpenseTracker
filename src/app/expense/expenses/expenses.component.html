@@ -1,0 +1,208 @@
+<app-header></app-header>
+<div class="container" style="padding-top: 70px;">
+
+    <div class="pagetitle">
+        <h1>Expenses</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+                <li class="breadcrumb-item">Expense</li>
+                <li class="breadcrumb-item active">Expenses</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+
+    <div class="col-lg-12">
+        <div class="card recent-sales overflow-auto">
+            <div class="card-body">
+
+
+                <div class="modal fade" id="basicModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Update Expense</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row mb-3">
+                                        <label for="inputText" class="col-sm-4 col-form-label">Expense Name</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputEmail" class="col-sm-4 col-form-label">Amount</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputPassword" class="col-sm-4 col-form-label">Expense Date</label>
+                                        <div class="col-sm-8">
+                                            <input type="date" max={{maxDate}} class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label class="col-sm-4 col-form-label">Category</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-select" aria-label="Default select example" required>
+                                                <option selected>Open this select menu</option>
+                                                <option value="1">Entertaiment</option>
+                                                <option value="2">Beauty</option>
+                                                <option value="3">Food</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label class="col-sm-4 col-form-label">Payment Type</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Open this select menu</option>
+                                                <option value="credit">Credit</option>
+                                                <option value="debit">Debit</option>
+                                                <option value="cash">Cash</option>
+                                                <option value="onlinepayment">OnlinePayment</option>
+                                                <option value="asset">Asset</option>
+                                                <option value="bankacc">Bank Acc.</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="inputPassword" class="col-sm-4 col-form-label">Comments</label>
+                                        <div class="col-sm-8">
+                                            <textarea class="form-control" style="height: 100px"></textarea>
+                                        </div>
+                                    </div>
+
+                                </form><!-- End Add Expense Form -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save
+                                    changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Basic Modal-->
+
+                <div class="modal fade" id="verticalycentered" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Delete Expense</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure want to delete expense ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Vertically centered Modal-->
+                <br>
+                <button type="button" class="btn btn-primary" id="btnExport"><i class="bi bi-file-earmark-pdf"></i> PDF</button>
+                <br><br>
+                <table datatable  class="row-border hover" id="tblCustomers">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Payment</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>xyz</td>
+                            <td>25000</td>
+                            <td>25-07-2022</td>
+                            <td>Food</td>
+                            <td><span class="badge bg-success">Cash</span></td>
+                            <td>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#basicModal">Edit</a> | <a href=""
+                                    data-bs-toggle="modal" data-bs-target="#verticalycentered">Delete</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>Abc</td>
+                            <td>25000</td>
+                            <td>25-07-2022</td>
+                            <td>Food</td>
+                            <td><span class="badge bg-primary">Credit</span></td>
+                            <td>
+                                <a href="">Edit</a> | <a href="">Delete</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Abc</td>
+                            <td>25000</td>
+                            <td>25-07-2022</td>
+                            <td>Food</td>
+                            <td><span class="badge bg-warning">Debit</span></td>
+                            <td>
+                                <a href="">Edit</a> | <a href="">Delete</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>Abc</td>
+                            <td>25000</td>
+                            <td>25-07-2022</td>
+                            <td>Food</td>
+                            <td><span class="badge bg-danger">OnlinePayment</span></td>
+                            <td>
+                                <a href="">Edit</a> | <a href="">Delete</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>Abc</td>
+                            <td>25000</td>
+                            <td>25-07-2022</td>
+                            <td>Food</td>
+                            <td><span class="badge bg-info">BankAcc.</span></td>
+                            <td>
+                                <a href="">Edit</a> | <a href="">Delete</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>Abc</td>
+                            <td>25000</td>
+                            <td>25-07-2022</td>
+                            <td>Food</td>
+                            <td><span class="badge bg-secondary">Asset</span></td>
+                            <td>
+                                <a href="">Edit</a> | <a href="">Delete</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
